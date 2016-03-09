@@ -1,7 +1,8 @@
 {
   "name": "geoinfo",
   "author": "gilyaev",
-  "description": "Streaming geonames parser",
+  "version": "0.1.0",
+  "description": "Get geo information from geonames service",
   "homepage": "https://github.com/gilyaev/geoinfo",
   "license": "MIT",
   "main": "lib/geonames",
