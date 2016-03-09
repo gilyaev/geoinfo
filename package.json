@@ -1,13 +1,13 @@
 {
-  "name": "geonames-parser",
+  "name": "geoinfo",
   "author": "gilyaev",
   "description": "Streaming geonames parser",
-  "homepage": "https://github.com/gilyaeveonames-parser",
+  "homepage": "https://github.com/gilyaev/geoinfo",
   "license": "MIT",
   "main": "lib/geonames",
   "repository": {
     "type": "git",
-    "url": "git@github.com:gilyaev/geonames-parser.git"
+    "url": "git@github.com:gilyaev/geoinfo.git"
   },
   "keywords": [
     "geonames",
@@ -17,7 +17,7 @@
     "geonames api"
   ],
   "bugs": {
-    "url": "https://github.com/gilyaev/geonames-parser/issues"
+    "url": "https://github.com/gilyaev/geoinfo/issues"
   },
   "engines": {
     "node": ">=0.10.25",
