@@ -1,0 +1,10 @@
+{
+	"locales": ["ru", "uk", "zh", "de", "en", "es", "pt", "it", "fr", "fa", "id"],
+	"geonames": {"userName": "***"},
+	"database": {
+		"host"     : "localhost",
+	  	"user"     : "root",
+	  	"password" : "***",
+	  	"database" : "****"
+	  }
+}
