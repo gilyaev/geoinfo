@@ -2,13 +2,13 @@
 
 var fs       = require('fs'),
     split    = require("split"),
-    geonames = require('../lib/geonames'),
+    geoinfo  = require('../lib/geoinfo'),
     request  = require('request');
 
 request.get('http://download.geonames.org/export/dump/countryInfo.txt')
 	.pipe(split())
-	.pipe(geonames.country())
-	.pipe(geonames.filter(function(record) {
+	.pipe(geoinfo.country())
+	.pipe(geoinfo.filter(function(record) {
 		return record.population > 500000000;
 	}))
 	.on('data', function (record) {
@@ -23,8 +23,8 @@ request.get('http://download.geonames.org/export/dump/countryInfo.txt')
 
 fs.createReadStream('./countryInfo.txt')
 	.pipe(split())
-	.pipe(geonames.country())
-	.pipe(geonames.filter(function(record) {
+	.pipe(geoinfo.country())
+	.pipe(geoinfo.filter(function(record) {
 		return record.population > 500000000;
 	}))
 	.on('data', function (record) {
@@ -39,8 +39,8 @@ fs.createReadStream('./countryInfo.txt')
 
 fs.createReadStream('./countryInfo.txt')
 	.pipe(split())
-	.pipe(geonames.range(52))
-	.pipe(geonames.country())
+	.pipe(geoinfo.range(52))
+	.pipe(geoinfo.country())
 	.once('data', function (record) {
 		console.log(record);
 	})
@@ -53,8 +53,8 @@ fs.createReadStream('./countryInfo.txt')
 
 request.get('http://ws.geonames.org/countryInfoCSV?lang=ru&username=demo')
 	.pipe(split())
-	.pipe(geonames.range(2, 5))
-	.pipe(geonames.countryI18n())
+	.pipe(geoinfo.range(2, 5))
+	.pipe(geoinfo.countryI18n())
 	.on('data', function (record) {
 		console.log(record);
 	})

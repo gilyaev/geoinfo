@@ -2,12 +2,12 @@
 
 var fs       = require('fs'),
     split    = require("split"),
-    geonames = require('../lib/geonames'),
+    geoinfo  = require('../lib/geoinfo'),
     request  = require('request');
 
 request.get('http://download.geonames.org/export/dump/admin1CodesASCII.txt')
 	.pipe(split())
-	.pipe(geonames.admin1CodesASCII())
+	.pipe(geoinfo.admin1CodesASCII())
 	.on('data', function (record) {
 		console.log(record);
 	})
@@ -20,8 +20,8 @@ request.get('http://download.geonames.org/export/dump/admin1CodesASCII.txt')
 
 request.get('http://download.geonames.org/export/dump/admin1CodesASCII.txt')
 	.pipe(split())
-	.pipe(geonames.admin1CodesASCII())
-	.pipe(geonames.filter(function(record) {
+	.pipe(geoinfo.admin1CodesASCII())
+	.pipe(geoinfo.filter(function(record) {
 		return record.codes.indexOf('US.') != -1;
 	}))
 	.on('data', function (record) {
@@ -36,7 +36,7 @@ request.get('http://download.geonames.org/export/dump/admin1CodesASCII.txt')
 
 request.get('http://download.geonames.org/export/dump/admin2Codes.txt')
 	.pipe(split())
-	.pipe(geonames.admin1CodesASCII())
+	.pipe(geoinfo.admin1CodesASCII())
 	.on('data', function (record) {
 		console.log(record);
 	})
