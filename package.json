@@ -1,7 +1,7 @@
 {
   "name": "geoinfo",
   "author": "gilyaev",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get geo information from geonames service",
   "homepage": "https://github.com/gilyaev/geoinfo",
   "license": "MIT",
